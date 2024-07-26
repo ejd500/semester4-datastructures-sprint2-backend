@@ -21,8 +21,8 @@ public class BinaryTreeLLController {
     }
 
     @GetMapping("tree/{id}")
-    public BinaryTreeLL getBinaryTreeLL(@PathVariable int id) {
-        return binaryTreeLLService.getBinaryTreeLL(id);
+    public BinaryTreeLL getBinaryTreeLLById(@PathVariable int id) {
+        return binaryTreeLLService.getBinaryTreeLLById(id);
     }
 
     @GetMapping("trees")

@@ -12,13 +12,18 @@ public class BinaryTreeLLService {
     @Autowired
     BinaryTreeLLRepository binaryTreeLLRepository;
 
-    public BinaryTreeLL getBinaryTreeLL(int id) {
+    @Autowired
+    public BinaryTreeLLService(BinaryTreeLLRepository binaryTreeLLRepository) {
+        this.binaryTreeLLRepository = binaryTreeLLRepository;
+    }
+
+    public BinaryTreeLL getBinaryTreeLLById(int id) {
 
         BinaryTreeLL result = binaryTreeLLRepository.findById(id);
 
-        if (result.root != null) {
-            return result;
-        }
+            if (result.root != null) {
+                return result;
+            }
 
         return null;
     }
